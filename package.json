@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/sutootototo2002/pro_koa/issues"
   },
-  "homepage": "https://github.com/sutootototo2002/pro_koa#readme"
+  "homepage": "https://github.com/sutootototo2002/pro_koa#readme",
+  "dependencies": {
+    "koa": "^2.6.2"
+  }
 }

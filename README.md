@@ -32,3 +32,101 @@
 	  "homepage": "https://github.com/sutootototo2002/pro_koa#readme"
 	}
 
+### 第一章 koa2 环境开发
+	
+	$ nvm install 7
+	$ npm i koa
+	$ node my-koa-app.js
+
+   app.js
+
+    const Koa = require('koa');
+	const app = new Koa();
+	app.use(async ctx => {
+	  ctx.body = 'Hello World';
+	});
+	
+	app.listen(3000);
+
+### 第二章 es6 复习
+
+#### 一、es6基本语法
+    1、let 是块级作用域
+    2、const 是常量
+    3、方法的简写、属性的简写
+    4、箭头函数
+    5、回调函数
+    6、promise处理异步
+
+	if(true){
+	    let a = 123;
+	}
+	console.log(a); //报错，只能在作用域内有效
+
+    var name = 'suxiaoyan';
+	var package = {
+	    name, //属性
+		run(){ //方法简写
+		        console.log(`${this.name}正在跑步！`);
+		    }
+	}
+    console.log(package.name); //suxiaoyan
+
+    //箭头函数
+	setTimeout(() => {
+	    //this 指向上下文
+	}, 2000);
+
+    //回调函数
+	function getData(callback){
+	    setTimeout(function(){
+	        var name = '张三';
+	        callback(name);
+	    }, 1000);
+	}
+	
+	getData(function(data){
+	    console.log(data+'1111')
+	});
+
+    //promise
+    
+	var p = new Promise(function(resolve,reject){
+	    setTimeout(function(){
+	        var name = '张三';
+	        if(Math.random()<0.7){
+	            resolve(name);
+	        }else{
+	            reject('失败');
+	        }
+	    }, 1000);
+	})
+	
+	p.then((data)=>{
+	    console.log(data);
+	})
+
+
+    //写法二
+	function data1(resolve,reject){
+	    setTimeout(function(){
+	        var name = '苏晓燕';
+	        if(Math.random()<0.7){
+	            resolve(name);
+	        }else{
+	            reject('失败');
+	        }
+	    }, 1000);
+	}
+	
+	var p1 = new Promise(data1);
+	
+	p1.then((data)=>{
+	    console.log(data);
+	})
+
+
+
+
+
+
